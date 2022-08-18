@@ -1,90 +1,129 @@
-# AirBnB clone - The console
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+</p>
 
-This project is the first stage on  building a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data, and the console commands allow the user to create, update, destroy ... objects, and manage file storage. Using a system of JSON serialization/deserialization.
+<h3 align="center">Airbnb Clone</h3>
 
-## How to Use
+<div align="center">
 
-1. After cloning the repository locate the "console.py" file and run it
-```
-AirBnB_clone$ ./console.py
-```
-Then a promp will appear like this
-```
-(hbnb)
-```
-Now u can Use our built in commands
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Emmastro/AirBnB_clone/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github./pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-### Commands
+</div>
 
-|     command      |       Description       |        Usage       |
-|:-----------------|:-----------------------:|:-------------------:|
-| EOF  |  the EOF exits the program   |    EOF     |
-| all  |  Prints all string representation of all instances based or not on the class name| all <className>  |
-| count|  counts how many instances of class created and saved| count <class_name> |
-| create| creates a new instance of the class passed as argument| create <className> |
-| destroy| Deletes an instance based on the class name and id| destroy <className> <objectId>|
-| help | List available commands with "help" or detailed help with "help cmd"| help <cmd>|
-| quit | The quit command exits the program | quit |
-| show | prints the string representation of an instance | show <className> <objectId> |
-| update| Updates an object's attributes | update <className> <id> <attName> <attVal>|
+---
 
-### Alternative Syntax
-Also you can run the commands [count, show, destroy, update, all] in this format too: 
-```
-<class name>.<command>([<id> [<*args> or <**kwargs>]])
-```
+<p align="center"> Holberton project
+    <br> 
+</p>
 
-## Examples
+## 📝 Table of Contents
 
-### Syntax 1
-##### Create Object
-Usage: create <class_name>
-```
-(hbnb) create User
-cb8562e5-82c1-4cb8-9d58-06c0fe3e0c98
-(hbnb)  
-```
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [Contributing](../CONTRIBUTING.md)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
 
-##### Show string represenation of an object
-Usage: show <class_name> <_id>
-```
-(hbnb) show User cb8562e5-82c1-4cb8-9d58-06c0fe3e0c98
-[User] (cb8562e5-82c1-4cb8-9d58-06c0fe3e0c98) {'id': 'cb8562e5-82c1-4cb8-9d58-06c0fe3e0c98', 'created_at': datetime.datetime(2021, 11, 9, 17, 8, 45, 23018), 'updated_at': datetime.datetime(2021, 11, 9, 17, 8, 45, 23018)}
-(hbnb) 
-```
+## 🧐 About <a name = "about"></a>
 
-##### Destro object
-Usage: destroy <class_name> <_id>
+This is a Airbnb clone projects that will be build with the aim to learn and apply concepts of high level programming and software engineering in general
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Python3
+
+### Installing
+
+Clone this reposito
+
 ```
-(hbnb) destroy User cb8562e5-82c1-4cb8-9d58-06c0fe3e0c98
-(hbnb) show User cb8562e5-82c1-4cb8-9d58-06c0fe3e0c98
-** no instance found **
-(hbnb) 
+git clone git@github.com:Emmastro/AirBnB_clone.git
+cd AirBnB_clone
+./console.py
 ```
 
-### Syntax 2
-##### Show all instances of class User
-Usage: <class_name>.all()
+## 🔧 Running the tests <a name = "tests"></a>
+
+This project uses the python unittest model for automated tests
+
+
+#### Run all unit tests
+`python3 -m unittest discover tests`
+
+#### Run a test from a specific file
+`python3 -m unittest tests/tespytestt_models/test_base_model.py`
+
+## 🎈 Usage <a name="usage"></a>
+
+You can run the schell (in an interactive or non-interactive mode) to manipulate your models.
+You can start it from running the console.py file:
+
 ```
-(hbnb) User.all()
-["[User] (d59dc247-6307-46b8-9e3e-9c241493838b) {'id': 'd59dc247-6307-46b8-9e3e-9c241493838b', 'created_at': datetime.datetime(2021, 11, 9, 14, 16, 45, 138082), 'updated_at': datetime.datetime(2021, 11, 9, 14, 45, 34, 287408), 'first_name': 'betty'}", "[User] (eceae679-ed06-4f47-90f4-1ffa157b3410) {'id': 'eceae679-ed06-4f47-90f4-1ffa157b3410', 'created_at': datetime.datetime(2021, 11, 9, 14, 17, 24, 456980), 'updated_at': datetime.datetime(2021, 11, 9, 14, 17, 24, 456980)}", "[User] (a80a69d0-4c72-4c0d-8184-a6b24042ff8b) {'id': 'a80a69d0-4c72-4c0d-8184-a6b24042ff8b', 'created_at': datetime.datetime(2021, 11, 9, 14, 17, 39, 881359), 'updated_at': datetime.datetime(2021, 11, 9, 14, 17, 39, 881359)}"]
-(hbnb)
+$ ./console.py
 ```
 
-##### Destroy a User Instance
-Usage: <class_name>.destroy(<_id>)
-```
-(hbnb) User.destroy(d59dc247-6307-46b8-9e3e-9c241493838b)
-(hbnb) User.show(d59dc247-6307-46b8-9e3e-9c241493838b)
-** no instance found **
-(hbnb) 
-```
+The following commands are supported:
 
-##### Update an object's attribute
-Usage: <class_name>.update(<_id>, <attribute_name>, <attribute_value>)
-```
-(hbnb) User.update(eceae679-ed06-4f47-90f4-1ffa157b3410, first-name, tutorial)
-(hbnb) User.show(eceae679-ed06-4f47-90f4-1ffa157b3410)
-[User] (eceae679-ed06-4f47-90f4-1ffa157b3410) {'id': 'eceae679-ed06-4f47-90f4-1ffa157b3410', 'created_at': datetime.datetime(2021, 11, 9, 14, 17, 24, 456980), 'updated_at': datetime.datetime(2021, 11, 9, 17, 16, 40, 617514), 'first-name': 'tutorial'}
-(hbnb) 
-```
+### create: 
+  Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id. 
+  Ex: 
+  ```
+  $ create BaseModel
+  ```
+
+### show: 
+  Prints the string representation of an instance based on the class name and id. 
+  Ex: 
+  ```
+  $ show BaseModel 1234-1234-1234.
+  ```
+
+### destroy:
+  Deletes an instance based on the class name and id (save the change into the JSON file). 
+  Ex:
+  ```
+  $ destroy BaseModel 1234-1234-1234.
+  ```
+
+### all:
+  Prints all string representation of all instances based or not on the class name. 
+  Example to show all instances
+  ```
+  $ all
+  ```
+
+  Example to show all instances of BaseModel only
+  ```
+  $ all BaseModel
+  ```
+
+### update:
+  Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
+  Ex: 
+  ```
+  $ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com"
+  ```
+
+### quit:
+  Quit the shell 
+
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [Python](https://www.python.org/) - Programming language
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@Dirac156](https://github.com/Dirac156) - Dirac Murairi
+- [@Emmastro](https://github.com/Emmastro) - Emmanuel Murairi
